@@ -1,5 +1,5 @@
 import React from 'react';
-import { format, isSameMonth } from 'date-fns';
+import { format, isSameMonth, isToday } from 'date-fns';
 
 export function CalendarGrid({ days, getDayStatus, onDateClick, monthStart, notes = [] }) {
   const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -35,6 +35,7 @@ export function CalendarGrid({ days, getDayStatus, onDateClick, monthStart, note
           const status = getDayStatus(day);
           const formattedDay = format(day, 'd');
           const dotColor = hasNotesForDay(day);
+          const today = isToday(day);
           
           if (!status.isCurrentMonth) {
             return (
@@ -96,7 +97,7 @@ export function CalendarGrid({ days, getDayStatus, onDateClick, monthStart, note
               onClick={() => onDateClick(day)}
               className="relative h-14 lg:h-16 flex flex-col items-center justify-center cursor-pointer group"
             >
-              <span className="text-slate-600 font-medium group-hover:text-indigo-600 transition-colors text-sm lg:text-base">
+              <span className={`font-medium group-hover:text-indigo-600 transition-colors text-sm lg:text-base ${today ? 'w-10 h-10 lg:w-12 lg:h-12 rounded-full ring-2 ring-indigo-400 flex items-center justify-center text-indigo-600 font-bold' : 'text-slate-600'}`}>
                 {formattedDay}
               </span>
               {/* Sub-dot indicating note */}

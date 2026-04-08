@@ -37,7 +37,7 @@ export function NotesSidebar({ notes, addNote, deleteNote, updateNote, selection
     <>
       <aside className="w-full lg:w-80 glass-sidebar rounded-xl p-6 shadow-[0px_8px_24px_rgba(44,47,49,0.04)] sticky top-8">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="font-bold text-lg font-headline">Notes &amp; Memos</h3>
+          <h3 className="font-bold text-lg font-headline">Notes & Memos</h3>
           <span className="material-symbols-outlined text-slate-400">edit_note</span>
         </div>
         <div className="space-y-4 mb-8 max-h-[50vh] overflow-y-auto pr-2">
