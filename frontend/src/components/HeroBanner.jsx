@@ -31,19 +31,17 @@ export function HeroBanner({ currentDate, nextMonth, prevMonth }) {
         loading="eager"
       />
       {/* Date Overlay */}
-      <div className="absolute bottom-0 left-0 p-8 lg:p-12 bg-gradient-to-t from-black/60 to-transparent w-full flex items-end justify-between">
-        <div className="flex flex-col">
-          <span className="text-white/80 font-medium tracking-widest text-xs uppercase mb-1">Planning Ahead</span>
-          <div className="flex items-center gap-6">
-            <h2 className="text-white text-4xl lg:text-6xl font-extrabold tracking-tight font-headline">{monthName}</h2>
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full p-1 border border-white/20">
-              <button onClick={prevMonth} className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors text-white cursor-pointer">
-                <span className="material-symbols-outlined">chevron_left</span>
-              </button>
-              <button onClick={nextMonth} className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors text-white cursor-pointer">
-                <span className="material-symbols-outlined">chevron_right</span>
-              </button>
-            </div>
+      <div className="absolute bottom-0 left-0 p-8 lg:p-12 bg-gradient-to-t from-black/60 to-transparent w-full">
+        <span className="text-white/80 font-medium tracking-widest text-xs uppercase mb-1 block">Planning Ahead</span>
+        <div className="flex items-end justify-between">
+          <h2 className="text-white text-4xl lg:text-6xl font-extrabold tracking-tight font-headline">{monthName}</h2>
+          <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full p-1 border border-white/20">
+            <button onClick={prevMonth} className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors text-white cursor-pointer">
+              <span className="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button onClick={nextMonth} className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors text-white cursor-pointer">
+              <span className="material-symbols-outlined">chevron_right</span>
+            </button>
           </div>
         </div>
       </div>
